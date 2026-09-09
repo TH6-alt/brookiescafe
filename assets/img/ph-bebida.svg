@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img" aria-label="Bebida gelada da Brookies Café — foto ilustrativa">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#B87945"/><stop offset="1" stop-color="#241714"/></linearGradient>
+    <filter id="n"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="2" stitchTiles="stitch"/><feColorMatrix type="matrix" values="0 0 0 0 1 0 0 0 0 .96 0 0 0 0 .9 0 0 0 .05 0"/></filter>
+  </defs>
+  <rect width="800" height="600" fill="url(#g)"/>
+  <rect width="800" height="600" filter="url(#n)"/>
+  <rect x="22" y="22" width="756" height="556" rx="18" fill="none" stroke="#F7F0E6" stroke-opacity=".4" stroke-width="2"/>
+  <g fill="none" stroke="#F7F0E6" stroke-opacity=".9" stroke-width="11" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M330 190h150l-16 220a20 20 0 0 1-20 18h-58a20 20 0 0 1-20-18z"/>
+    <path d="M338 250h134"/>
+    <path d="M470 190l40-70"/>
+  </g>
+  <g fill="#F7F0E6" fill-opacity=".8"><circle cx="380" cy="300" r="9"/><circle cx="420" cy="340" r="7"/><circle cx="398" cy="370" r="6"/></g>
+  <text x="400" y="500" text-anchor="middle" fill="#F7F0E6" fill-opacity=".8" font-family="Inter,Arial,sans-serif" font-weight="700" font-size="24" letter-spacing="5">FOTO · BEBIDA</text>
+</svg>

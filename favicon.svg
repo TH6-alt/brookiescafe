@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Brookies Café">
+  <rect width="64" height="64" rx="14" fill="#28190F"/>
+  <circle cx="32" cy="32" r="21" fill="#24A05B"/>
+  <path d="M20 30h24a3 3 0 0 1 3 3v3a12 12 0 0 1-12 12h-4A12 12 0 0 1 17 36v-3a3 3 0 0 1 3-3z" fill="#FFF9F1"/>
+  <path d="M46 33a7 7 0 0 1 0 11" fill="none" stroke="#FFF9F1" stroke-width="4" stroke-linecap="round"/>
+  <g fill="none" stroke="#EFC13D" stroke-width="3.4" stroke-linecap="round">
+    <path d="M25 25q-4-5 0-10"/><path d="M32 25q-4-5 0-10"/><path d="M39 25q-4-5 0-10"/>
+  </g>
+</svg>
