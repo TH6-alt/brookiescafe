@@ -185,7 +185,7 @@ páginas próprias sem retrabalho de conteúdo.
 | 6 | Arquivo oficial do **logo** (.svg/.png) | Recebido só como imagem; usar recriação em SVG até chegar o oficial |
 | 7 | Depoimentos de clientes (texto) | Nenhum real disponível. Seção usa nota + prova social do Instagram. Criar depoimentos fictícios foi **recusado** (§15). Se a Brookies coletar avaliações reais (Google/Instagram), dá pra montar cards |
 | 8 | Link direto da ficha/avaliação no Google Maps | Não fornecido — usar link de busca por nome+endereço |
-| 9 | Domínio e hospedagem | A definir |
+| 9 | Domínio e hospedagem | **Hospedado** na Vercel (2026-09-09) via GitHub `TH6-alt/brookiescafe` → https://brookiescafe-ten.vercel.app (redeploy automático a cada push). Falta só o **domínio próprio** (ex.: brookiescafe.com.br) — e então trocar canonical/OG/JSON-LD (hoje apontam pro placeholder `brookiescafe.com.br`) |
 | 10 | História/tempo de funcionamento da marca | **Proibido inventar** (§15) |
 | 11 | Vídeo da história: **legendas (VTT)** para acessibilidade | Player pronto; falta o arquivo de legendas |
 | 12 | Vídeo `historia-brookies.mp4` pesa **~26 MB** | Idealmente comprimir (H.264/AAC ~1080p, `-crf 24`) ou hospedar; hoje `preload="none"` evita baixar antes do play |

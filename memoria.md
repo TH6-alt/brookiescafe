@@ -140,6 +140,19 @@ Não registro conversas inteiras. Datas em formato absoluto.
   5,1:1 · botão primário base 5,7:1 · botão dourado/CTA 10:1 · texto/marrom 10,8:1. Sem erros
   de console. specs/design.md §2 e §10 + specs/site.md §5 (itens 3, 6, 12) atualizados.
   Sem alteração no `data.js`.
+- **2026-09-09** — **Site publicado na Vercel** via GitHub. Repo:
+  **`github.com/TH6-alt/brookiescafe`** (branch `main`; `referencia - site/` fora por `.gitignore`).
+  URL de produção: **https://brookiescafe-ten.vercel.app** (time Vercel `th6`, plano hobby).
+  Todo `git push` no `main` redeploya sozinho. Verificado no ar: HTML/CSS/JS, as 25 fotos, os
+  SVGs e **os 2 vídeos** (`hero-brookies.mp4` toca no hero; `historia-brookies.mp4` = 200/206);
+  32 itens do cardápio, 6 tiles do Instagram, galeria marquee (8+8), seção verde `#0F5C3A`.
+  Notas: (a) o `deploy_to_vercel`/`create_git_project` do MCP não funcionou aqui (token sem
+  acesso aos projetos do time — criou 2 projetos fantasma `brookies-cafe`/`brookiescafe` que o
+  dono deve apagar no painel); o deploy que vingou foi **import manual no painel da Vercel**.
+  (b) `index.html` ainda tem `canonical`/`og:image`/JSON-LD apontando pro domínio placeholder
+  `brookiescafe.com.br` — trocar pela URL real (ou pelo domínio final) — ver TODO no `<head>`.
+  (c) `/favicon.ico` dá 404 cosmético (o site só tem `favicon.svg`); opcional adicionar um
+  `.ico` ou um `<link rel="icon" sizes>` extra.
 - **2026-09-07** — Adicionada **foto no topo dos 3 cards** da seção "Por que a Brookies":
   Café fresquinho → `foto-01` (cappuccino), com `object-position: center 82%` pra o corte 16:10
   focar na xícara (o padrão pegava só a madeira do meio); Doce artesanal → `foto-06` (brownie); Do lado da
