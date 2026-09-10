@@ -180,6 +180,12 @@ Não registro conversas inteiras. Datas em formato absoluto.
   (Instagram: gap 64px p/ `.ig-stats`), hero 76px / h2 40,8px no desktop, 404 renderiza,
   todos os ícones/manifest 200, sem erro de console. `styles.css`, `index.html`, `main.js`,
   `data.js` alterados; `404.html` + `site.webmanifest` + 5 ícones criados.
+- **2026-09-10** — **Correção:** os `<h3>` dos cards de "Por que a Brookies"
+  ("Café fresquinho" / "Doce artesanal" / "Do lado da praça") estavam **creme sobre card creme**
+  (invisíveis). Causa: a regra `.section--verde h2, h3 { color: creme }` (da paleta de 2026-09-08)
+  também atinge os `h3` dentro dos `.feature-card` claros. Fix: reasserção
+  `.section--dark/--verde .feature-card h3` (e `.proof-card h2/h3`) → `--cor-chocolate`.
+  Lição: regras de "título claro" em seção escura precisam excluir os cards de superfície clara.
 - **2026-09-07** — Adicionada **foto no topo dos 3 cards** da seção "Por que a Brookies":
   Café fresquinho → `foto-01` (cappuccino), com `object-position: center 82%` pra o corte 16:10
   focar na xícara (o padrão pegava só a madeira do meio); Doce artesanal → `foto-06` (brownie); Do lado da
