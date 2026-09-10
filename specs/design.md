@@ -100,20 +100,26 @@ Direção: **serifada contemporânea nos títulos + sans moderna no corpo**. Má
   `--cor-texto-suave` (nunca inventar valor).
 - **Categoria (tag do card):** Inter 600, caixa alta, 0.75rem, chip com `--raio-pill`.
 - Sem serifa em blocos longos. Sem caixa alta em parágrafos. Sem fonte script (não usar).
+- **Aperto dos títulos** (mais editorial, 2026-09-10): `h1..h4` com `line-height: 1.07` e
+  `letter-spacing: -.021em`; `.hero__title` com `line-height: 1.02` e `-.028em`.
+- **Número editorial de "capítulo"**: cada `.section-head` (Por que, Cardápio, Sobre, História,
+  Avaliações, Instagram, Localização — 01…07) mostra o índice via `::before` + `counter()`, em
+  Fraunces itálico grande, marca d'água discreta acima do eyebrow (`--cor-caramelo` @ .16 no
+  claro; `--cor-ouro` @ .22 no escuro), `pointer-events:none`, decorativo.
 
-### Escala (base 16px, fluida com `clamp()`)
+### Escala (base 16px, fluida com `clamp()`) — ampliada em 2026-09-10
 | Token | Desktop | Mobile |
 |---|---|---|
-| `--fs-display` | 4rem | 2.4rem |
-| `--fs-h1` | 2.75rem | 2rem |
-| `--fs-h2` | 2.125rem | 1.6rem |
-| `--fs-h3` | 1.375rem | 1.2rem |
+| `--fs-display` | 4.75rem | 2.6rem |
+| `--fs-h1` | 3.1rem | 2.1rem |
+| `--fs-h2` | 2.55rem | 1.7rem |
+| `--fs-h3` | 1.4rem | 1.2rem |
 | `--fs-body-lg` | 1.125rem | 1.0625rem |
 | `--fs-body` | 1rem | 1rem |
 | `--fs-small` | 0.875rem | 0.875rem |
 | `--fs-eyebrow` | 0.8125rem | 0.8125rem |
 
-Ex.: `--fs-display: clamp(2.4rem, 1.2rem + 5vw, 4rem);`
+Ex.: `--fs-display: clamp(2.6rem, 1rem + 6vw, 4.75rem);`
 
 ## 4. Espaçamentos
 
@@ -194,6 +200,11 @@ Slots: hero (4:5 grande), 3 produtos (4:3), 2–3 ambiente (3:2 / 1:1), 3 experi
 
 - **Entrada:** fade + subida de 12–16px ao entrar na viewport (IntersectionObserver), 500–700ms,
   `ease-out`, uma vez. Stagger ~80ms entre cards de uma grade.
+- **Fotos (LQIP, 2026-09-10):** cada `<img class="photo">` tem a **cor dominante** da foto como
+  `background-color` (inline no HTML / `data.js`). Enquanto o JPEG carrega aparece esse tom
+  quente; ao `load`, o `main.js` põe `.is-loaded` e a foto revela com `opacity` .55s. Sem JS ou
+  com `prefers-reduced-motion` a foto aparece direto. Evita o "flash bege" e dá sensação de
+  carregamento instantâneo.
 - **Hover card:** `translateY(-3px)` + sombra + leve zoom da imagem, 200ms.
 - **Header:** encolhe e ganha sombra após 60–80px de scroll.
 - **Modal:** fade do backdrop + subida/scale sutil do painel, 200ms.

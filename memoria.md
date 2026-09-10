@@ -153,6 +153,33 @@ Não registro conversas inteiras. Datas em formato absoluto.
   `brookiescafe.com.br` — trocar pela URL real (ou pelo domínio final) — ver TODO no `<head>`.
   (c) `/favicon.ico` dá 404 cosmético (o site só tem `favicon.svg`); opcional adicionar um
   `.ico` ou um `<link rel="icon" sizes>` extra.
+- **2026-09-10** — **Polimento "premium" (itens 3, 4 e 5 da lista de sugestões).**
+  - **3 · LQIP** nas fotos reais: amostrei a cor dominante das 16 fotos usadas (via canvas no
+    navegador) e pus como `background-color` inline em cada `<img class="photo">` (HTML) e em
+    cada entrada de `instagramGrid` (`data.js`, campo `color`). CSS: `.js img.photo{opacity:0}`
+    → `main.js` põe `.is-loaded` no `load` → revela em .55s por cima do tom quente.
+    `prefers-reduced-motion`/sem-JS = aparece direto. **Não** foi feito WebP/AVIF/`srcset` (sem
+    ffmpeg/imagemagick/node no ambiente) — segue como pendência §9 #5a.
+  - **4 · Tipografia maior + números editoriais.** Escala ampliada em `:root`
+    (`--fs-display` 4→4.75rem, `--fs-h1` 2.75→3.1, `--fs-h2` 2.125→2.55, `--fs-h3` 1.375→1.4);
+    títulos com `line-height`/`letter-spacing` mais apertados; `.hero__title` `-.028em`/1.02.
+    Novo: **número de capítulo** em cada `.section-head` via `counter(chapter, decimal-leading-
+    zero)` no `::before` (Fraunces itálico, marca d'água — caramelo .16 no claro / ouro .22 no
+    escuro). Numerados 01…07: Por que, Cardápio, Sobre (ganhou um `.section-head` p/ entrar na
+    contagem), História, Avaliações, Instagram, Localização. Hero/Experiência/CTA sem número.
+    design.md §3 atualizado.
+  - **5 · Acabamento.** `::selection` (ouro-suave/chocolate), scrollbar estilizada
+    (`scrollbar-color` + `::-webkit-scrollbar*`), `caret-color`, `:focus-visible` redesenhado
+    (anel `--cor-verde-escuro` 2px + offset 3px + raio 6px; dourado sobre fundo escuro/hero/
+    footer). Nova **`404.html`** de marca (logo + Fraunces + botões, `noindex`, usa o
+    `styles.css`; a Vercel serve em rota desconhecida). Favicon completo: `favicon.ico` (32px),
+    `apple-touch-icon` `icon-180.png`, `icon-192/512.png` + `site.webmanifest` — todos gerados
+    do `favicon.svg` por canvas no navegador (sem ferramenta de imagem). `<head>` do
+    `index.html` com os `<link>` novos (paths root-absolutos). Mata o 404 de `/favicon.ico`.
+  Verificado local (1270/390px): sem overflow horizontal, 7 números de capítulo sem colisão
+  (Instagram: gap 64px p/ `.ig-stats`), hero 76px / h2 40,8px no desktop, 404 renderiza,
+  todos os ícones/manifest 200, sem erro de console. `styles.css`, `index.html`, `main.js`,
+  `data.js` alterados; `404.html` + `site.webmanifest` + 5 ícones criados.
 - **2026-09-07** — Adicionada **foto no topo dos 3 cards** da seção "Por que a Brookies":
   Café fresquinho → `foto-01` (cappuccino), com `object-position: center 82%` pra o corte 16:10
   focar na xícara (o padrão pegava só a madeira do meio); Doce artesanal → `foto-06` (brownie); Do lado da

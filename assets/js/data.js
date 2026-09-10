@@ -392,13 +392,15 @@
     ],
 
     // Grade do Instagram — fotos reais da Brookies Café (em assets/img/fotos/).
+    // "color" = cor dominante da foto (amostrada 2026-09-10), usada como placeholder (LQIP)
+    // enquanto o JPEG carrega — evita o retângulo bege e dá sensação de carregamento instantâneo.
     instagramGrid: [
-      { image: "assets/img/fotos/foto-01.jpg", alt: "Cappuccino da Brookies Café em frente ao letreiro" },
-      { image: "assets/img/fotos/foto-10.jpg", alt: "Soda italiana de frutas vermelhas da Brookies Café" },
-      { image: "assets/img/fotos/foto-14.jpg", alt: "Frappé de maracujá da Brookies Café" },
-      { image: "assets/img/fotos/foto-06.jpg", alt: "Bandeja com smoothie de morango e fatias de brookies" },
-      { image: "assets/img/fotos/foto-13.jpg", alt: "Waffle de presunto e queijo com milkshake de morango" },
-      { image: "assets/img/fotos/foto-21.jpg", alt: "Pães com gotas de chocolate da Brookies Café, com o playground da praça ao fundo" }
+      { image: "assets/img/fotos/foto-01.jpg", color: "#5b442d", alt: "Cappuccino da Brookies Café em frente ao letreiro" },
+      { image: "assets/img/fotos/foto-10.jpg", color: "#5c4b37", alt: "Soda italiana de frutas vermelhas da Brookies Café" },
+      { image: "assets/img/fotos/foto-14.jpg", color: "#5f5738", alt: "Frappé de maracujá da Brookies Café" },
+      { image: "assets/img/fotos/foto-06.jpg", color: "#59473a", alt: "Bandeja com smoothie de morango e fatias de brookies" },
+      { image: "assets/img/fotos/foto-13.jpg", color: "#7c6c4b", alt: "Waffle de presunto e queijo com milkshake de morango" },
+      { image: "assets/img/fotos/foto-21.jpg", color: "#7e6547", alt: "Pães com gotas de chocolate da Brookies Café, com o playground da praça ao fundo" }
     ]
   };
 })();

@@ -8,8 +8,10 @@
 <meta name="theme-color" content="#F7F0E6">
 <!-- TODO: ajustar canonical, og:image, twitter:image e as URLs do JSON-LD para o domínio final quando ele existir. -->
 <link rel="canonical" href="https://brookiescafe.com.br/">
-<link rel="icon" href="favicon.svg" type="image/svg+xml">
-<link rel="apple-touch-icon" href="favicon.svg">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="apple-touch-icon" href="/icon-180.png">
+<link rel="manifest" href="/site.webmanifest">
 
 <meta property="og:type" content="business.business">
 <meta property="og:title" content="Brookies Café | Brownie, Cookie e Café em Maceió">
@@ -138,7 +140,7 @@
       <ul class="feature-trio">
         <li class="feature-card reveal">
           <div class="feature-card__media">
-            <img src="assets/img/fotos/foto-01.jpg" alt="Cappuccino recém-tirado da Brookies Café" width="1170" height="1534" loading="lazy" decoding="async" style="object-position: center 82%">
+            <img class="photo" src="assets/img/fotos/foto-01.jpg" alt="Cappuccino recém-tirado da Brookies Café" width="1170" height="1534" loading="lazy" decoding="async" style="object-position: center 82%; background-color:#5b442d">
           </div>
           <span class="feature-card__icon" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11h13v3a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5Z"/><path d="M17 12h1.5a2.5 2.5 0 0 1 0 5H17M8 4c-.5 1 .5 2 0 3M12 4c-.5 1 .5 2 0 3"/></svg>
@@ -148,7 +150,7 @@
         </li>
         <li class="feature-card reveal">
           <div class="feature-card__media">
-            <img src="assets/img/fotos/foto-06.jpg" alt="Fatias de brownie com calda de chocolate da Brookies Café" width="1170" height="1556" loading="lazy" decoding="async">
+            <img class="photo" src="assets/img/fotos/foto-06.jpg" alt="Fatias de brownie com calda de chocolate da Brookies Café" width="1170" height="1556" loading="lazy" decoding="async" style="background-color:#59473a">
           </div>
           <span class="feature-card__icon" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 9h.01M15 10h.01M9 15c1 1 5 1 6 0"/></svg>
@@ -203,8 +205,10 @@
   <section class="section" id="sobre" aria-labelledby="sobre-title">
     <div class="container about">
       <div class="about__text">
-        <p class="eyebrow">Sobre a Brookies</p>
-        <h2 id="sobre-title">Um cantinho especial para quem ama um café</h2>
+        <div class="section-head">
+          <p class="eyebrow">Sobre a Brookies</p>
+          <h2 id="sobre-title">Um cantinho especial para quem ama um café</h2>
+        </div>
         <p>A Brookies Café é uma cafeteria de bairro na Gruta de Lourdes, ao lado da Praça Genésio de Carvalho. A proposta é simples: doce fresquinho, café bem tirado e um lugar gostoso pra sentar no fim da tarde.</p>
         <p>É ponto de encontro de quem mora por perto, de quem passeia na praça e de quem só quer uma pausa boa antes de seguir o dia.</p>
         <ul class="about__highlights">
@@ -227,7 +231,7 @@
         </ul>
       </div>
       <figure class="about__media">
-        <img src="assets/img/fotos/foto-18.jpg" alt="Toasts de queijo e cafés na Brookies Café, com a área ao ar livre da Praça Genésio de Carvalho ao fundo" width="1160" height="1600" loading="lazy" decoding="async">
+        <img class="photo" src="assets/img/fotos/foto-18.jpg" alt="Toasts de queijo e cafés na Brookies Café, com a área ao ar livre da Praça Genésio de Carvalho ao fundo" width="1160" height="1600" loading="lazy" decoding="async" style="background-color:#7d6c47">
       </figure>
     </div>
   </section>
@@ -256,7 +260,7 @@
   <!-- ================= EXPERIÊNCIA ================= -->
   <section id="experiencia" aria-labelledby="exp-title">
     <!-- Faixa full-bleed: foto real da Brookies. Manter o gradiente de overlay >= 45% para o texto branco ler bem. -->
-    <div class="fullbleed-band" style="background-image: linear-gradient(180deg, rgba(36,23,20,.5), rgba(36,23,20,.68)), url('assets/img/fotos/foto-05.jpg')">
+    <div class="fullbleed-band" style="background-color:#685949; background-image: linear-gradient(180deg, rgba(36,23,20,.5), rgba(36,23,20,.68)), url('assets/img/fotos/foto-05.jpg')">
       <div class="container fullbleed-band__inner">
         <p class="eyebrow">A experiência</p>
         <h2 id="exp-title">Seu café merece uma pausa</h2>
@@ -275,28 +279,28 @@
         <div class="scatter-marquee__track">
           <ul class="scatter-gallery" aria-label="Fotos da Brookies Café">
             <li class="scatter-gallery__item" style="--rot:-5deg">
-              <img src="assets/img/fotos/foto-12.jpg" alt="Pão com gotas de chocolate, brownie com calda e café da Brookies Café ao entardecer" width="1170" height="1487" loading="lazy" decoding="async">
+              <img class="photo" src="assets/img/fotos/foto-12.jpg" alt="Pão com gotas de chocolate, brownie com calda e café da Brookies Café ao entardecer" width="1170" height="1487" loading="lazy" decoding="async" style="background-color:#71674d">
             </li>
             <li class="scatter-gallery__item" style="--rot:3.5deg">
-              <img src="assets/img/fotos/foto-15.jpg" alt="Croissant de frango com catupiry e coxinha crocante da Brookies Café" width="1140" height="1550" loading="lazy" decoding="async">
+              <img class="photo" src="assets/img/fotos/foto-15.jpg" alt="Croissant de frango com catupiry e coxinha crocante da Brookies Café" width="1140" height="1550" loading="lazy" decoding="async" style="background-color:#8b7844">
             </li>
             <li class="scatter-gallery__item" style="--rot:-1.5deg">
-              <img src="assets/img/fotos/foto-24.jpg" alt="Waffle recheado, pizza croissant e sodas italianas na mesa da Brookies Café" width="1170" height="1531" loading="lazy" decoding="async">
+              <img class="photo" src="assets/img/fotos/foto-24.jpg" alt="Waffle recheado, pizza croissant e sodas italianas na mesa da Brookies Café" width="1170" height="1531" loading="lazy" decoding="async" style="background-color:#50402c">
             </li>
             <li class="scatter-gallery__item" style="--rot:5.5deg">
-              <img src="assets/img/fotos/foto-08.jpg" alt="Pães salgados no balcão da Brookies Café, com a praça ao fundo" width="1170" height="1157" loading="lazy" decoding="async">
+              <img class="photo" src="assets/img/fotos/foto-08.jpg" alt="Pães salgados no balcão da Brookies Café, com a praça ao fundo" width="1170" height="1157" loading="lazy" decoding="async" style="background-color:#826443">
             </li>
             <li class="scatter-gallery__item" style="--rot:-4deg">
-              <img src="assets/img/fotos/foto-13.jpg" alt="Waffle de presunto e queijo com milkshake de morango da Brookies Café" width="1170" height="1522" loading="lazy" decoding="async">
+              <img class="photo" src="assets/img/fotos/foto-13.jpg" alt="Waffle de presunto e queijo com milkshake de morango da Brookies Café" width="1170" height="1522" loading="lazy" decoding="async" style="background-color:#7c6c4b">
             </li>
             <li class="scatter-gallery__item" style="--rot:4.5deg">
-              <img src="assets/img/fotos/foto-02.jpg" alt="Toasts caprese e café dalgona da Brookies Café" width="1170" height="1544" loading="lazy" decoding="async">
+              <img class="photo" src="assets/img/fotos/foto-02.jpg" alt="Toasts caprese e café dalgona da Brookies Café" width="1170" height="1544" loading="lazy" decoding="async" style="background-color:#6b604a">
             </li>
             <li class="scatter-gallery__item" style="--rot:-3deg">
-              <img src="assets/img/fotos/foto-09.jpg" alt="Croissant com calda de chocolate da Brookies Café, com a praça decorada ao fundo" width="1170" height="1529" loading="lazy" decoding="async">
+              <img class="photo" src="assets/img/fotos/foto-09.jpg" alt="Croissant com calda de chocolate da Brookies Café, com a praça decorada ao fundo" width="1170" height="1529" loading="lazy" decoding="async" style="background-color:#825b3d">
             </li>
             <li class="scatter-gallery__item" style="--rot:2deg">
-              <img src="assets/img/fotos/foto-22.jpg" alt="Croissants e milkshakes da Brookies Café numa mesa da praça à noite" width="1170" height="1541" loading="lazy" decoding="async">
+              <img class="photo" src="assets/img/fotos/foto-22.jpg" alt="Croissants e milkshakes da Brookies Café numa mesa da praça à noite" width="1170" height="1541" loading="lazy" decoding="async" style="background-color:#6e582f">
             </li>
           </ul>
         </div>

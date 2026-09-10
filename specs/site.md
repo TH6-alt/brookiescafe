@@ -181,7 +181,7 @@ páginas próprias sem retrabalho de conteúdo.
 | 3 | WhatsApp, e-mail, telefone | Não divulgados — campos ocultos |
 | 4 | Existe delivery/iFood, formas de pagamento | Desconhecido — não exibir |
 | 5 | Fotos reais | **Parcial** (2026-09-07): 25 fotos em `assets/img/fotos/`; 13 já usadas em Hero, Sobre, Experiência, Instagram e "Por que". Faltam: **foto da entrada da loja** (card "Do lado da praça" usa `ph-entrada.svg`); fotos por item do cardápio |
-| 5a | Fotos: otimizar (WebP/AVIF + resize) | JPEGs originais ~130–250 KB, ~1170 px de largura; ok, mas dá pra reduzir |
+| 5a | Fotos: otimizar (WebP/AVIF + resize) | JPEGs ~130–250 KB, ~1170 px. **LQIP feito** (2026-09-10: cor dominante como placeholder + fade no `load`). Falta ainda converter p/ WebP/AVIF e gerar `srcset` (precisa de build/ferramenta de imagem — não há no ambiente atual) |
 | 6 | Arquivo oficial do **logo** (.svg/.png) | Recebido só como imagem; usar recriação em SVG até chegar o oficial |
 | 7 | Depoimentos de clientes (texto) | Nenhum real disponível. Seção usa nota + prova social do Instagram. Criar depoimentos fictícios foi **recusado** (§15). Se a Brookies coletar avaliações reais (Google/Instagram), dá pra montar cards |
 | 8 | Link direto da ficha/avaliação no Google Maps | Não fornecido — usar link de busca por nome+endereço |
@@ -203,14 +203,17 @@ páginas próprias sem retrabalho de conteúdo.
 - Estrutura de pastas:
   ```
   index.html
+  404.html               (página de erro de marca — servida pela Vercel)
+  site.webmanifest
+  favicon.svg  favicon.ico  icon-180.png  icon-192.png  icon-512.png
   assets/css/styles.css
   assets/js/data.js
   assets/js/main.js
   assets/img/            (logo + placeholders SVG do cardápio)
   assets/img/fotos/      (fotos reais da Brookies)
   assets/video/          (hero-brookies.mp4 = vídeo de abertura; historia-brookies.mp4)
-  favicon.svg
   ```
+  (os `icon-*.png` / `favicon.ico` foram gerados a partir de `favicon.svg` em 2026-09-10.)
 - Hospedagem estática (Netlify / Cloudflare Pages / GitHub Pages) — a definir.
 
 ## 11. Regras de responsividade
@@ -259,7 +262,8 @@ páginas próprias sem retrabalho de conteúdo.
 - **Title:** `Brookies Café | Brownie, Cookie e Café em Maceió`
 - **Meta description:** `Conheça a Brookies Café, em Gruta de Lourdes, Maceió. Brownies, cookies
   e cafés para deixar seu momento ainda mais especial.`
-- Open Graph + Twitter card + favicon.
+- Open Graph + Twitter card + favicon (SVG + `favicon.ico` 32px + `apple-touch-icon` 180px +
+  `site.webmanifest` com ícones 192/512 — desde 2026-09-10). `404.html` de marca com `noindex`.
 - **JSON-LD** `CafeOrCoffeeShop`: `name`, `address` (real), `sameAs` [Instagram],
   `hasMenu` (#cardapio), `servesCuisine`, `priceRange` "R$ 6–27" (faixa real do cardápio).
   **Sem** `aggregateRating` (só 1 avaliação no Google, sem exibir contagem — decisão de

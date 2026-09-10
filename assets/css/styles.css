@@ -30,8 +30,31 @@ a { color: var(--cor-caramelo-escuro); text-underline-offset: 3px; }
 a:hover { color: var(--cor-chocolate); }
 button { font: inherit; color: inherit; cursor: pointer; background: none; border: 0; }
 input, select, textarea { font: inherit; }
-:focus-visible { outline: 2px solid var(--cor-chocolate); outline-offset: 3px; border-radius: 4px; }
 [hidden] { display: none !important; }
+
+/* --- acabamento: seleção, cursor, scrollbar, foco desenhado --- */
+::selection { background: var(--cor-ouro-suave); color: var(--cor-chocolate); }
+::-moz-selection { background: var(--cor-ouro-suave); color: var(--cor-chocolate); }
+html { scrollbar-color: var(--cor-caramelo) var(--cor-fundo-torrada); scrollbar-width: thin; }
+body { caret-color: var(--cor-caramelo-escuro); }
+::-webkit-scrollbar { width: 12px; height: 12px; }
+::-webkit-scrollbar-track { background: var(--cor-fundo-torrada); }
+::-webkit-scrollbar-thumb {
+  background: var(--cor-caramelo); border-radius: var(--raio-pill);
+  border: 3px solid var(--cor-fundo-torrada);
+}
+::-webkit-scrollbar-thumb:hover { background: var(--cor-caramelo-escuro); }
+
+:focus-visible {
+  outline: 2px solid var(--cor-verde-escuro);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+/* sobre fundo escuro / hero o anel fica dourado p/ contraste */
+.section--dark :focus-visible,
+.section--verde :focus-visible,
+.hero :focus-visible,
+.site-footer :focus-visible { outline-color: var(--cor-ouro); }
 
 /* 02 --------------------------------------------------------------- Tokens */
 :root {
@@ -58,10 +81,10 @@ input, select, textarea { font: inherit; }
   /* tipografia */
   --ff-title: "Fraunces", "Playfair Display", Georgia, "Times New Roman", serif;
   --ff-body: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
-  --fs-display: clamp(2.4rem, 1.2rem + 5vw, 4rem);
-  --fs-h1: clamp(2rem, 1.3rem + 2.6vw, 2.75rem);
-  --fs-h2: clamp(1.6rem, 1.15rem + 1.8vw, 2.125rem);
-  --fs-h3: clamp(1.2rem, 1.05rem + .6vw, 1.375rem);
+  --fs-display: clamp(2.6rem, 1rem + 6vw, 4.75rem);
+  --fs-h1: clamp(2.1rem, 1.2rem + 3.2vw, 3.1rem);
+  --fs-h2: clamp(1.7rem, 1.1rem + 2.4vw, 2.55rem);
+  --fs-h3: clamp(1.2rem, 1.05rem + .6vw, 1.4rem);
   --fs-body-lg: clamp(1.0625rem, 1rem + .25vw, 1.125rem);
   --fs-body: 1rem;
   --fs-small: .875rem;
@@ -85,9 +108,9 @@ input, select, textarea { font: inherit; }
 @media (max-width: 600px) { :root { --gutter: 20px; --header-h: 66px; } }
 
 /* 03 ----------------------------------------------------------- Tipografia */
-h1, h2, h3, h4 { font-family: var(--ff-title); font-weight: 600; line-height: 1.12; letter-spacing: -.01em; color: var(--cor-chocolate); }
+h1, h2, h3, h4 { font-family: var(--ff-title); font-weight: 600; line-height: 1.07; letter-spacing: -.021em; color: var(--cor-chocolate); text-wrap: balance; }
 h2 { font-size: var(--fs-h2); }
-h3 { font-size: var(--fs-h3); letter-spacing: -.005em; }
+h3 { font-size: var(--fs-h3); letter-spacing: -.012em; line-height: 1.15; }
 p { max-width: 68ch; }
 strong { font-weight: 600; }
 .eyebrow {
@@ -110,9 +133,26 @@ strong { font-weight: 600; }
 .section--dark .eyebrow, .section--verde .eyebrow { color: var(--cor-ouro); }
 .section--dark .eyebrow::before, .section--verde .eyebrow::before { background: var(--cor-ouro); }
 .section--dark p, .section--verde p { color: #E8DED0; }
-.section-head { max-width: 62ch; margin-bottom: var(--space-7); }
+.section-head { max-width: 62ch; margin-bottom: var(--space-7); position: relative; counter-increment: chapter; }
 .section-head p { margin-top: var(--space-3); font-size: var(--fs-body-lg); color: var(--cor-texto-suave); }
 .section--dark .section-head p, .section--verde .section-head p { color: #D9CDBC; }
+/* número editorial do "capítulo" — marca d'água discreta acima do eyebrow */
+body { counter-reset: chapter; }
+.section-head::before {
+  content: counter(chapter, decimal-leading-zero);
+  position: absolute; left: -.04em; top: 0; z-index: 0;
+  transform: translateY(-.66em);
+  font-family: var(--ff-title); font-weight: 600; font-style: italic;
+  font-size: clamp(2.75rem, 7vw, 5.25rem); line-height: 1; letter-spacing: -.03em;
+  color: var(--cor-caramelo); opacity: .16;
+  pointer-events: none; user-select: none;
+}
+.section-head > * { position: relative; z-index: 1; }
+.section--dark .section-head::before,
+.section--verde .section-head::before { color: var(--cor-ouro); opacity: .22; }
+@media (max-width: 600px) {
+  .section-head::before { font-size: 2.5rem; transform: translateY(-.52em); opacity: .14; }
+}
 /* legenda do vídeo da História quando a seção fica escura */
 .section--dark .video-figure figcaption { color: #D9CDBC; }
 .skip-link {
@@ -262,8 +302,8 @@ section[id]:not(.hero) { scroll-margin-top: calc(var(--header-h) + 12px); }
 .hero .eyebrow { color: var(--cor-ouro); }
 .hero .eyebrow::before { background: var(--cor-ouro); }
 .hero__title {
-  font-size: var(--fs-display); line-height: 1.08; margin-bottom: var(--space-4);
-  color: #fff; text-wrap: balance;
+  font-size: var(--fs-display); line-height: 1.02; letter-spacing: -.028em;
+  margin-bottom: var(--space-4); color: #fff; text-wrap: balance;
 }
 .hero__title .u-serif-italic { color: var(--cor-ouro-suave); }
 .hero__lead {
@@ -670,10 +710,16 @@ section[id]:not(.hero) { scroll-margin-top: calc(var(--header-h) + 12px); }
 .js .reveal { opacity: 0; transform: translateY(18px); transition: opacity .6s ease, transform .6s ease; }
 .js .reveal.is-visible { opacity: 1; transform: none; }
 
+/* LQIP: a foto revela por cima do placeholder de cor (background-color inline) ao carregar.
+   Só com JS (a classe .is-loaded vem do main.js); sem JS a foto aparece normal. */
+.js img.photo { opacity: 0; transition: opacity .55s ease; }
+.js img.photo.is-loaded { opacity: 1; }
+
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation-duration: .001ms !important; animation-iteration-count: 1 !important; transition-duration: .001ms !important; }
   .js .reveal { opacity: 1; transform: none; }
+  .js img.photo { opacity: 1; }
   .product-card:hover { transform: none; }
   .product-card:hover .product-card__media img { transform: none; }
 }

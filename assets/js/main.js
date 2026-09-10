@@ -181,7 +181,8 @@
       var a = document.createElement("a");
       a.href = igUrl; a.target = "_blank"; a.rel = "noopener";
       a.setAttribute("aria-label", "Abrir o Instagram da Brookies Café");
-      a.innerHTML = '<img src="' + item.image + '" alt="' + item.alt + '" loading="lazy" decoding="async" width="600" height="600">';
+      var lqip = item.color ? ' style="background-color:' + item.color + '"' : "";
+      a.innerHTML = '<img class="photo" src="' + item.image + '" alt="' + item.alt + '" loading="lazy" decoding="async" width="600" height="600"' + lqip + ">";
       igWrap.appendChild(a);
     });
   }
@@ -214,6 +215,20 @@
       t.src = FALLBACK;
     }
   }, true);
+
+  /* ---------- fotos: fade-in ao carregar (LQIP) -------------------
+     Cada <img class="photo"> tem uma cor dominante como background (no HTML/data.js).
+     O CSS deixa a foto em opacity:0 até ganhar a classe .is-loaded — assim ela
+     revela por cima do placeholder de cor em vez de "piscar" do bege.
+     Sem JS ou com prefers-reduced-motion, o CSS mantém tudo visível. */
+  if (!prefersReduced) {
+    $all("img.photo").forEach(function (img) {
+      if (img.complete && img.naturalWidth) { img.classList.add("is-loaded"); return; }
+      var done = function () { img.classList.add("is-loaded"); };
+      img.addEventListener("load", done);
+      img.addEventListener("error", done);
+    });
+  }
 
   /* ---------- header scroll state ------------------------------- */
   var header = $(".site-header");
