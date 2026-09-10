@@ -130,6 +130,9 @@ strong { font-weight: 600; }
 .section--verde { background: var(--cor-verde-fundo); color: var(--cor-texto-inverso); }
 .section--dark h2, .section--dark h3,
 .section--verde h2, .section--verde h3 { color: var(--cor-fundo-clara); }
+/* títulos dentro de cards claros NÃO herdam o texto claro da seção verde/marrom */
+.section--dark .feature-card h3, .section--verde .feature-card h3,
+.section--dark .proof-card :where(h2, h3), .section--verde .proof-card :where(h2, h3) { color: var(--cor-chocolate); }
 .section--dark .eyebrow, .section--verde .eyebrow { color: var(--cor-ouro); }
 .section--dark .eyebrow::before, .section--verde .eyebrow::before { background: var(--cor-ouro); }
 .section--dark p, .section--verde p { color: #E8DED0; }
