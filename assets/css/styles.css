@@ -669,6 +669,8 @@ section[id]:not(.hero) { scroll-margin-top: calc(var(--header-h) + 12px); }
 .footer-meta { display: grid; gap: 8px; font-size: var(--fs-small); }
 .footer-meta .star { color: var(--cor-ouro); }
 .footer-bottom { margin-top: var(--space-7); padding-top: var(--space-5); border-top: 1px solid var(--cor-borda-inversa); font-size: var(--fs-small); display: flex; flex-wrap: wrap; gap: var(--space-3); justify-content: space-between; }
+.footer-bottom a { color: #D9CDBC; text-decoration: underline; text-underline-offset: 3px; }
+.footer-bottom a:hover { color: #fff; }
 @media (max-width: 780px) { .footer-top { grid-template-columns: 1fr 1fr; } .footer-brand { grid-column: 1 / -1; } }
 @media (max-width: 460px) { .footer-top { grid-template-columns: 1fr; } }
 

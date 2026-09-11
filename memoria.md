@@ -186,6 +186,11 @@ Não registro conversas inteiras. Datas em formato absoluto.
   também atinge os `h3` dentro dos `.feature-card` claros. Fix: reasserção
   `.section--dark/--verde .feature-card h3` (e `.proof-card h2/h3`) → `--cor-chocolate`.
   Lição: regras de "título claro" em seção escura precisam excluir os cards de superfície clara.
+- **2026-09-11** — Rodapé: trocada a frase "Feito com carinho em Maceió · Site em construção"
+  por **crédito ao criador do site** — `Site criado por @matheusrafaelmd`, linkado pro Instagram
+  (`instagram.com/matheusrafaelmd`, `target="_blank" rel="noopener"`). Adicionado
+  `.footer-bottom a` (cor `#D9CDBC`, sublinhado) pra não herdar o link claro/caramelo padrão,
+  que teria contraste baixo (~3:1) no rodapé escuro — ficou 10,85:1.
 - **2026-09-07** — Adicionada **foto no topo dos 3 cards** da seção "Por que a Brookies":
   Café fresquinho → `foto-01` (cappuccino), com `object-position: center 82%` pra o corte 16:10
   focar na xícara (o padrão pegava só a madeira do meio); Doce artesanal → `foto-06` (brownie); Do lado da
